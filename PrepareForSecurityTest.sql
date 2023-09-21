@@ -1,0 +1,17 @@
+USE master;
+GO
+
+CREATE DATABASE TestDB;
+GO
+
+USE TestDB;
+GO
+
+CREATE TABLE TestPriv 
+(
+	ID int IDENTITY(1,1) PRIMARY KEY
+,	InsertBy sysname
+);
+
+INSERT INTO TestPriv (InsertBy)
+VALUES(SUSER_SNAME())
