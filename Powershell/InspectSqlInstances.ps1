@@ -1,4 +1,4 @@
-﻿#1# Import SQLPS
+﻿#1 Import SQLPS
 
 Clear-Host;
 Import-Module SQLPS;
