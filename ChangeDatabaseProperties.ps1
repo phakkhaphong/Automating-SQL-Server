@@ -14,12 +14,14 @@ $databaseName = "AdventureWorks";
 $database = Get-Item -Path $databaseName;
     
 #4 Change some of the database properties
+
 $database.CompatibilityLevel = [Microsoft.SqlServer.Management.Smo.CompatibilityLevel]::Version150;
 $database.Alter();
 Write-Host "Changed database properties";
 Write-Host $database.CompatibilityLevel
 
 #5 Change some of the database options
+
 $database.DatabaseOptions.AnsiNullsEnabled = $false;
 $database.DatabaseOptions.AutoShrink = $true;
 $database.DatabaseOptions.ReadOnly = $true;
