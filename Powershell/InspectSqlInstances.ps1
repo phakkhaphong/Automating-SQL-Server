@@ -33,7 +33,7 @@ Get-ChildItem | Select-Object -ExpandProperty Databases | Select-Object -Propert
 
 (Get-ChildItem | Select-Object -ExpandProperty Databases | Select-Object -Property @{Name="InstanceName"; Expression={$_.Parent.DisplayName}}, Name, Status, CompatibilityLevel, RecoveryModel, Collation, Size, IndexSpaceUsage, ActiveConnections | Sort-Object -Property Size -Descending | ConvertTo-XML).Save("D:\Demofiles\Mod11\Demo\Dbs.xml");
 
-#9 Output to a CSCV file, which can then be opened in Excel
+#9 Output to a CSV file
 
 Get-ChildItem | Select-Object -ExpandProperty Databases | Select-Object -Property @{Name="InstanceName"; Expression={$_.Parent.DisplayName}}, Name, Status, CompatibilityLevel, RecoveryModel, Collation, Size, IndexSpaceUsage, ActiveConnections | Sort-Object -Property Size -Descending | ConvertTo-CSV | Out-File -FilePath "D:\Demofiles\Mod11\Demo\Dbs.csv";
 
